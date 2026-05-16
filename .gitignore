@@ -1,0 +1,14 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+python-engine/venv/
+
+.env
+*.log
+
+attendance.db
+attendance.db-shm
+attendance.db-wal
+
+.DS_Store

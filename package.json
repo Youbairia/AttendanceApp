@@ -1,0 +1,14 @@
+{
+  "name": "face-attendance",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "setup": "python-engine/venv/bin/python -m pip install -r python-engine/requirements.txt && npm --prefix api install && npm --prefix dashboard install",
+    "dev": "npm run api & npm run dashboard; wait",
+    "api": "npm --prefix api run dev",
+    "dashboard": "npm --prefix dashboard run dev -- --host 127.0.0.1",
+    "check": "python-engine/venv/bin/python python-engine/db.py && npm --prefix api run build && npm --prefix dashboard run build",
+    "camera-test": "python-engine/venv/bin/python python-engine/camera_test.py",
+    "status": "curl -s http://localhost:3001/health || echo 'API is NOT running. Run: npm run api'"
+  }
+}
